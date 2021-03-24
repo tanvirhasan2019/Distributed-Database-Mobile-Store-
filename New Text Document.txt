@@ -1,0 +1,6 @@
+FOR t IN ( select * from product natural join ((SELECT * FROM sell) union (select * from sell@site2))) LOOP
+            IF t.sid = id THEN
+		         isFound :=1;
+		    
+            END IF;
+        END LOOP;
